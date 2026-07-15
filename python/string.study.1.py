@@ -101,7 +101,7 @@ Sua mensagem possui X caracteres.
 """
 def message_size(name):
     num_spaces = len(name)
-    return (f"Sua mensagem possui {num_spaces} caracteres")
+    return (f"Sua mensagem possui {num_spaces} caracteres.")
 
 print(message_size(name))
 print(message_size(l))
