@@ -117,7 +117,7 @@ anti_dot = ".I'm dot.phobic."
 def the_dot_slayer(anti_dot):
     first_dot_slay = anti_dot.lstrip(".")
     second_dot_slay = first_dot_slay.rstrip(".")
-    final_dot_slay = second_dot_slay[0:7] + second_dot_slay[8:14]
+    final_dot_slay = second_dot_slay[:7] + second_dot_slay[8:]
     return final_dot_slay
 
 print(the_dot_slayer(anti_dot))
@@ -156,7 +156,7 @@ Exemplo:
 sad_day_for_Brazil = "In July 5th of 2026, Brazil was eliminated from the FIFA Soccer World Cup losing to Norway, the match score was Brazil 0 and Norway 2. The two goals were from the player which the last name is Haaland and the first name is Erling"
 
 def remove_ing(sad_day_for_Brazil):
-    return sad_day_for_Brazil.endswith("ing")
+    return sad_day_for_Brazil.removesuffix("ing")
 
 print(remove_ing(sad_day_for_Brazil))
 print(remove_ing(JavaScript_affirmation))
