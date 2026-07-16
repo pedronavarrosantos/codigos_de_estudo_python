@@ -195,3 +195,38 @@ def create_username(namorada):
     return esposa.replace(" ", "_")
 
 print(create_username(namorada))
+
+"""
+Desafio Final (Opcional) — Muito Difícil
+
+Crie uma função chamada text_statistics().
+
+Ela recebe uma frase.
+
+Retorne um dicionário contendo:
+
+{
+    "letters": quantidade_de_letras,
+    "spaces": quantidade_de_espacos,
+    "words": quantidade_de_palavras,
+    "uppercase": frase_em_maiusculas,
+    "lowercase": frase_em_minusculas
+}
+
+Exemplo:
+
+Entrada:
+
+Python é incrível
+
+Saída:
+
+{
+    "letters": 18,
+    "spaces": 2,
+    "words": 3,
+    "uppercase": "PYTHON É INCRÍVEL",
+    "lowercase": "python é incrível"
+}
+"""
+string_desafio = "Python é incrível"
