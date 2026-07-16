@@ -272,4 +272,24 @@ uma letra minúscula.
 
 Observação: resolva utilizando apenas os recursos de strings que você já aprendeu. Não utilize expressões regulares (re) nem bibliotecas externas.
 """
+<<<<<<< HEAD
 # não consegui resolver o exercício 40 e nem o desafio final
+=======
+senha1 = "aGharThabLacKoPs3"
+senha2 = "senhabunda"
+senha3 = "menos8"
+senha4 = "senh4media"
+
+def password_strength(senha1):
+    if len(senha1) >= 12:
+        if senha1.isalnum() == True:
+            for batatinha in senha1:
+                if batatinha.isupper():
+                    return "Forte"
+                
+
+
+
+
+
+>>>>>>> b4ceff76b5fcb5b818897d22b766cabe658fa5b5
