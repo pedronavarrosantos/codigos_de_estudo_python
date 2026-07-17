@@ -25,8 +25,7 @@ idade = int(input("Digite a sua idade:"))
 senha = input("Escolha a sua senha:")
 
 def cadastrar_usuario(nome, idade, senha):
-    nstrip = nome.strip()
-    if len(nstrip) > 0 and idade >= 18 and len(senha) >= 8:
+    if len(nome.strip()) > 0 and idade >= 18 and len(senha) >= 8:
         return "Cadastro realizado"
     return "Cadastro inválido"
 

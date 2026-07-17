@@ -1,6 +1,4 @@
-print("Por favor, insira um ano para verificar se é bissexto ou não:")
-
-year = int(input())
+year = int(input("Por favor, insira um ano para verificar se é bissexto ou não:"))
 
 def leap_year(year):
     if (year % 4) == 0:
