@@ -27,5 +27,5 @@ for letra_x in word:
     if letra_x == "x":
         print("A letra 'x' foi encontrada.")
         break
-    elif letra_x == word[-1]:
+    else:
         print("A letra 'x' NÃO foi encontrada.")
