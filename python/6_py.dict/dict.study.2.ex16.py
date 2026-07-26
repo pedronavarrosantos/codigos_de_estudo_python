@@ -71,8 +71,8 @@ while True:
                 print(pessoa)
                 found = True
                 break
-            if not found:
-                print("Pessoa não encontrada.")  
+        if not found:
+            print("Pessoa não encontrada.")  
     elif options == "4":
         while True:
             nom = input("Digite o nome da pessoa para removê-la ou '0' para retornar ao menu principal.\n")

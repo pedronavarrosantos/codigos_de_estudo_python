@@ -36,7 +36,7 @@ Matheus
 """
 with open("filesteste.txt", "a") as file:
     file.write("Stephanie\n")
-    file.write("Matheus\n")\
+    file.write("Matheus\n")
 
 """
 Exercício 4 ⭐⭐⭐⭐
