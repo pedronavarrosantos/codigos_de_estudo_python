@@ -105,7 +105,7 @@ def remover():
 # Função showList() exibe o conteúdo de cada dicionário dentro da lista.
 def showList():
     for pessoa in pessoas:
-            print(f"{pessoa['nome']} - {pessoa['idade']}.")
+            print(f"{pessoa['nome']} - {pessoa['idade']}.\n")
 
 # Função end() encerra o funcionamento de toda a aplicação.
 def end():
