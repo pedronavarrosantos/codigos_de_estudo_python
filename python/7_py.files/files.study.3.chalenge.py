@@ -11,6 +11,12 @@ Esse desafio é um excelente fechamento do módulo de arquivos e muito próximo 
 # As linhas de código 15 até 119 foram importadas do documento D:\VSCODE.pastas\codigos_de_estudo\python\7_py.files\files.study.2.challenge.py
 # Um novo txt chamado 'challenge.txt' é criado neste documento.
 
+# Função 'savedoc() salva o arquivo sempre que uma alteração é feita:
+def savedoc():
+    with open("challenge.txt", "w") as doc:
+        for aluno in alunos:
+             doc.write(f"{aluno['nome']},{aluno['idade']}\n")
+
 # Lista que receberá em forma de dicionário os dados dentro do arquivo .txt:
 alunos = []
 
@@ -31,7 +37,8 @@ with open("challenge.txt", "r") as doc:
 # Bloco de código while que dá ao usuário opções de manipulação da lista de dicionários dos alunos:   
 while True:
     
-    options = input("Bem-vindo ao sistema de alunos, escolha uma opção:\n 1 - Procurar aluno;\n 2 - Adicionar aluno;\n 3 - Alterar idade;\n 4 - Remover aluno;\n 5 - Mostrar alunos;\n 6 - Sair.\n")
+    # A variavel 'options' permite que o usuário acesse os recursos do aplicativo:
+    options = input("Bem-vindo ao sistema de alunos, escolha uma opção de 1 a 6:\n 1 - Procurar aluno;\n 2 - Adicionar aluno;\n 3 - Alterar idade;\n 4 - Remover aluno;\n 5 - Mostrar alunos;\n 6 - Sair.\n")
     
     # Procura aluno:
     if options == "1":
@@ -45,10 +52,6 @@ while True:
                             print("Aluno encontrado")
                             print(aluno)
                             found = True
-                            
-                            with open("challenge.txt", "w") as doc:
-                                for aluno in alunos:
-                                    doc.write(f"{aluno['nome']},{aluno['idade']}\n")
                         else:
                             continue
                     if not found:
@@ -69,13 +72,10 @@ while True:
                     "idade": alunoIdade
                 })
                 print(f"{alunoNome} de idade {alunoIdade} adicionado.")
+                savedoc()
             else:
                     print("Retornando ao menu principal")
                     break
-        
-        with open("challenge.txt", "w") as doc:
-            for aluno in alunos:
-                doc.write(f"{aluno['nome']},{aluno['idade']}\n")
     # Altera idade de aluno:
     elif options == "3":
         while True:
@@ -92,16 +92,12 @@ while True:
                             "idade": updateIdade
                         })
                         print(f"Idade de {aluno['nome']} alterada para {aluno['idade']}")
-                        with open("challenge.txt", "w") as doc:
-                            for aluno in alunos:
-                                doc.write(f"{aluno['nome']},{aluno['idade']}\n")
+                        savedoc()
                 if not found:
                     print(f"{alunoNome} não está listado entre o alunos.")
             else:
                     print("Retornando ao menu principal")
-                    break
-
-        
+                    break 
     # Remove aluno            
     elif options == "4":
         while True:
@@ -113,18 +109,17 @@ while True:
                 for aluno in alunos:
                     if aluno["nome"] == alunoNome:
                         alunos.remove(aluno)
-                        print(f"{alunoNome} removido")
+
                         found = True
+
+                        print(f"{alunoNome} removido")
+                        savedoc()
                         break
                 if not found:
                     print(f"{alunoNome} não está listado entre o alunos.")
             else:
                 print("Retornando ao menu principal")
                 break
-
-        with open("challenge.txt", "w") as doc:
-            for aluno in alunos:
-                doc.write(f"{aluno['nome']},{aluno['idade']}\n")
     # Imprime os nomes dos alunos (apenas):
     elif options == "5":
         counter = 1
@@ -139,8 +134,3 @@ while True:
     # Else para o caso do usuário inserir um comando invalido:
     else:
         print(f"O comando {options} não é válido.")
-
-# Abertura final do documento que implementa a função de salvamento de alterações no arquivo 'challenge.txt':
-with open("challenge.txt", "w") as doc:
-    for aluno in alunos:
-        doc.write(f"{aluno['nome']},{aluno['idade']}\n")
