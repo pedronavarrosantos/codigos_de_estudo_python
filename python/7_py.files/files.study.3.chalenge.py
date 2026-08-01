@@ -1,27 +1,21 @@
 """
 Desafio ⭐⭐⭐⭐⭐⭐
 
-Crie um programa que:
+Modifique o sistema de alunos que você criou para que todas as operações (adicionar, alterar e remover) 
+sejam salvas automaticamente no arquivo .txt. Assim, quando você fechar e abrir o programa novamente,
+as alterações continuarão lá.
 
-Leia o arquivo alunos.txt;
-Transforme-o em uma lista de dicionários;
-Exiba um menu:
-1 - Procurar aluno
-2 - Adicionar aluno
-3 - Alterar idade
-4 - Remover aluno
-5 - Mostrar alunos
-6 - Sair
-
-Por enquanto, não grave as alterações no arquivo. 
-Todas as modificações podem ficar apenas na memória (na lista). 
-Na próxima aula aprenderemos a salvar novamente essa lista no arquivo.
+Esse desafio é um excelente fechamento do módulo de arquivos e muito próximo de como pequenos sistemas funcionam antes de introduzirmos bancos de dados.
 """
+
+# As linhas de código 15 até 119 foram importadas do documento D:\VSCODE.pastas\codigos_de_estudo\python\7_py.files\files.study.2.challenge.py
+# Um novo txt chamado 'challenge.txt' é criado neste documento.
+
 # Lista que receberá em forma de dicionário os dados dentro do arquivo .txt:
 alunos = []
 
 # Bloco de código que faz o presente arquivo .py acessar o arquivo .txt:
-with open("file2.txt", "r") as doc:
+with open("challenge.txt", "r") as doc:
     # for que percorre cada linha do .txt:
     for line in doc:
         # Transformação dos dados em variáveis e filtragem para inserção nos dicionários:
@@ -51,6 +45,10 @@ while True:
                             print("Aluno encontrado")
                             print(aluno)
                             found = True
+                            
+                            with open("challenge.txt", "w") as doc:
+                                for aluno in alunos:
+                                    doc.write(f"{aluno['nome']},{aluno['idade']}\n")
                         else:
                             continue
                     if not found:
@@ -74,22 +72,36 @@ while True:
             else:
                     print("Retornando ao menu principal")
                     break
+        
+        with open("challenge.txt", "w") as doc:
+            for aluno in alunos:
+                doc.write(f"{aluno['nome']},{aluno['idade']}\n")
     # Altera idade de aluno:
     elif options == "3":
         while True:
             alunoNome = input("Digite o nome do aluno que quer mudar a idade ou digite '0' para retornar.\n")
+            found = False
+            
             if alunoNome != "0":
                 for aluno in alunos:
                     if aluno["nome"] == alunoNome:
                         updateIdade = int(input("Digite a nova idade:\n"))
+                        found = True
 
                         aluno.update({
                             "idade": updateIdade
                         })
                         print(f"Idade de {aluno['nome']} alterada para {aluno['idade']}")
+                        with open("challenge.txt", "w") as doc:
+                            for aluno in alunos:
+                                doc.write(f"{aluno['nome']},{aluno['idade']}\n")
+                if not found:
+                    print(f"{alunoNome} não está listado entre o alunos.")
             else:
                     print("Retornando ao menu principal")
                     break
+
+        
     # Remove aluno            
     elif options == "4":
         while True:
@@ -109,6 +121,10 @@ while True:
             else:
                 print("Retornando ao menu principal")
                 break
+
+        with open("challenge.txt", "w") as doc:
+            for aluno in alunos:
+                doc.write(f"{aluno['nome']},{aluno['idade']}\n")
     # Imprime os nomes dos alunos (apenas):
     elif options == "5":
         counter = 1
@@ -123,3 +139,8 @@ while True:
     # Else para o caso do usuário inserir um comando invalido:
     else:
         print(f"O comando {options} não é válido.")
+
+# Abertura final do documento que implementa a função de salvamento de alterações no arquivo 'challenge.txt':
+with open("challenge.txt", "w") as doc:
+    for aluno in alunos:
+        doc.write(f"{aluno['nome']},{aluno['idade']}\n")
