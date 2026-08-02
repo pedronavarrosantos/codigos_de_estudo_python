@@ -8,7 +8,7 @@ as alterações continuarão lá.
 Esse desafio é um excelente fechamento do módulo de arquivos e muito próximo de como pequenos sistemas funcionam antes de introduzirmos bancos de dados.
 """
 
-# As linhas de código 15 até 119 foram importadas do documento D:\VSCODE.pastas\codigos_de_estudo\python\7_py.files\files.study.2.challenge.py
+# A maior parte das linhas de código abaixo foram importadas do documento D:\VSCODE.pastas\codigos_de_estudo\python\7_py.files\files.study.2.challenge.py
 # Um novo txt chamado 'challenge.txt' é criado neste documento.
 
 # Função 'savedoc() salva o arquivo sempre que uma alteração é feita:
@@ -17,7 +17,7 @@ def savedoc():
         for aluno in alunos:
              doc.write(f"{aluno['nome']},{aluno['idade']}\n")
 
-# Lista que receberá em forma de dicionário os dados dentro do arquivo .txt:
+# 'alunos = []' é a lista que receberá em forma de dicionário os dados dentro do arquivo challenge.txt:
 alunos = []
 
 # Bloco de código que faz o presente arquivo .py acessar o arquivo .txt:
@@ -36,7 +36,6 @@ with open("challenge.txt", "r") as doc:
 
 # Bloco de código while que dá ao usuário opções de manipulação da lista de dicionários dos alunos:   
 while True:
-    
     # A variavel 'options' permite que o usuário acesse os recursos do aplicativo:
     options = input("Bem-vindo ao sistema de alunos, escolha uma opção de 1 a 6:\n 1 - Procurar aluno;\n 2 - Adicionar aluno;\n 3 - Alterar idade;\n 4 - Remover aluno;\n 5 - Mostrar alunos;\n 6 - Sair.\n")
     
@@ -131,6 +130,6 @@ while True:
     elif options == "6":
         print("Saindo do aplicativo")
         break
-    # Else para o caso do usuário inserir um comando invalido:
+    # Else para caso o usuário escreva um comando invalido:
     else:
         print(f"O comando {options} não é válido.")

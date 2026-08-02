@@ -1,15 +1,4 @@
 Stephanie,27
-Jean,33
-Vitor,66
-Jeane,61
-Kennya,37
-Tassia,38
-Alisson,30
+Pedro,27
 Alan,26
 Arthur,26
-Afonso,26
-Eduardo,26
-Matiuza,26
-Rafinha,26
-Julia,17
-Paulo,16
