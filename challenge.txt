@@ -1,4 +1,5 @@
-Stephanie,27
 Pedro,27
-Alan,26
-Arthur,26
+Stephanie,27
+Monteiro,28
+Vitor,66
+Jean,33
