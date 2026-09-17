@@ -25,7 +25,8 @@ This repository currently includes or will include exercises in:
 
 | Technology | Progress |
 |------------|----------|
-| Python | 🟡 Intermediate |
+| Python | 🟢 Advanced |
 | Git & GitHub | 🔴 Begginer |
 | JavaScript | ⚪ Planned |
-| SQL | ⚪ Planned |
+| SQL | 🔴 Begginer |
+| Tkinter | 🔴 Begginer |
